@@ -1,0 +1,269 @@
+<head>
+  <title>NHL Statistics</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="DBProject.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="DBProject.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <header id="header">
+      <ul>
+          <li>
+            <img src="http://4.bp.blogspot.com/-A8Beaj2-JeQ/TuOE9897WmI/AAAAAAAAABs/5BaysfIzslM/s320/NHL_Logo2.jpg" id="logo" height="50" width="65">
+            <div id="title">NHL Statistics
+            </div>
+          </li>
+        <li>
+            <div id="names">
+              <ul>
+                  <li>Constance Gervais</li>
+                  <li>Matthew Duffy</li>
+                  <li>Jack Forbes</li>
+              </ul>
+            </div>
+        </li>
+      </ul>
+    </header>
+    <div id="generalTabs" class="tabs">
+        <ul>
+            <li><a href="#queries">Queries</a></li>
+            <li><a href="#insert">Insert</a></li>
+            <li><a href="#delete">Delete</a></li>
+            <li><a href="#modify">Modify</a></li>
+        </ul>
+        <div id="queries">
+          <h1 style="text-align:left; color:#DDD">Queries</h1>
+            <div class="queryContainer">
+                <h2>Top Scorer</h2>
+                <p>Discover who the top performers are in any of these four categories</p>
+                <form>
+                    <select>
+                      <option value="Shooting">Shooting %</option>
+                      <option value="Goals">Goals</option>
+                      <option value="Assists">Assists</option>
+                      <option value="OT">OT Goals</option>
+                    </select>
+                    <input class="runQuery" id="topQuery" type="button" value="Run Query" />
+                </form>
+                <div id="topDiv" style="display:none"></div>
+            </div>
+            <hr>
+            <div class="queryContainer">
+                <h2>More Cost Effective Player</h2>
+                <p>Find out which players have a higher shooting percentage and a lower salary</p>
+                <form>
+                    <input type="text" class="autocomplete" placeholder="Enter Player's Name" />
+                    <input class="runQuery" id="costQuery" type="button" value="Run Query" />
+                </form>
+                <div id="costDiv" style="display:none"><ol></ol></div>
+            </div>
+            <hr>
+            <div class="queryContainer">
+                <h2>Stanley Cup Winners</h2>
+                <p>See which players won the 2013 Stanley Cup</p>
+                <form>
+                    <input class="runQuery" id="winQuery" type="button" value="Run Query" />
+                </form>
+                <div id="winDiv" style="display:none"><ul></ul></div>
+            </div>
+            <hr>
+            <div class="queryContainer">
+                <h2>Maximum Goalie Save %</h2>
+                <p>See all of the team goalies from highest save % to lowest</p>
+                <form>
+                    <input class="runQuery" id="saveQuery" type="button" value="Run Query" />
+                </form>
+                <div id="saveDiv" style="display:none"><table>
+                    <thead><tr><th>Name</th><th>Team</th><th>Save %</th><th>Salary</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sydney Crosby</td><td>Pittsburgh Penguins</td><td>0.66</td><td>3400000</td></tr>
+                    </tbody>
+                </table></div>
+            </div>
+        </div>
+        <div id="insert">
+            <h1 style="text-align:left; color:#DDD">Insert Player into Database</h1>
+            <form>
+            <div class="playerFields fields">
+                <h2>Overall Player Attributes</h2>
+                <div class="field"><label for="name">Name:</label><input type="text" id="name" placeholder="Enter Player's Name" required /></div>
+                <div class="field"><label for="height">Height:</label><input type="text" id="height" placeholder="Enter Player's Height" /></div>
+                <div class="field"><label for="weight">Weight:</label><input type="text" id="weight" placeholder="Enter Player's Weight" /></div>
+                <div class="field"><label for="salary">Salary:</label><input type="number" id="salary" /></div>
+                <div class="field"><label for="team">Team:</label>
+                <select id="team">
+					<option value="ANA">Anaheim Ducks</option>
+					<option value="BOS">Boston Bruins</option>
+					<option value="BUF">Buffalo Sabers</option>
+					<option value="CAR">Carolina Hurrican</option>
+					<option value="CBJ">Calgary Flames</option>
+					<option value="CHI">Chicago Black Hawks</option>
+					<option value="COL">Colorado Avalanche</option>
+					<option value="DAL">Dallas Stars</option>
+					<option value="EDM">Edmonton Oilers</option>
+					<option value="FLA">Florida Panthers</option>
+					<option value="LAK">Los Angeles Kings</option>
+					<option value="MIN">Minnesota Wild</option>
+					<option value="MTL">Montreal Canadians</option>
+					<option value="NJD">New Jersey Devils</option>
+					<option value="NSH">Nashville Predators</option>
+					<option value="NYI">New York Islanders</option>
+					<option value="NYR">New York Rangers</option>
+					<option value="OTT">Ottawa Senators</option>
+					<option value="PHI">Philadelphia Flyers</option>
+					<option value="PHX">Phoenix Coyotes</option>
+					<option value="PIT">Pittsburgh Peguins</option>
+					<option value="SJS">San Jose Sharks</option>
+					<option value="STL">St Louis Blues</option>
+					<option value="TBL">Tampa Bay Lightning</option>
+					<option value="TOR">Toronto Maple Leafs</option>
+					<option value="VAN">Vancouver Canucks</option>
+					<option value="WPG">Winnipeg Jets</option>
+					<option value="WSH">Washington Capitals</option>
+                </select></div>
+            </div>
+            <div id="insertTabs" class="tabs">
+                <ul>
+                    <li><a href="#skaters">Skater</a></li>
+                    <li><a href="#goalie">Goalie</a></li>
+                </ul>
+                <hr>
+                <div id="skaters">
+                    <div class="skaterFields fields">
+                        <h2>Skater Attributes</h2>
+                        <div class="field"><label for="shooting">Shot %:</label><input type="number" id="shooting" min="0" max="100"/></div>
+                        <div class="field"><label for="position">Position:</label><select id="positions">
+							<option value="L">Left Wing</option>
+							<option value="R">Right Wing</option>
+							<option value="C">Center</option>
+							<option value="D">Defenseman</option>
+						</select></div>
+                        <div class="field"><label for="goals">Goals:</label><input type="number" id="goals" min="0" /></div>
+                        <div class="field"><label for="assists">Assists:</label><input type="number" id="assists" min="0" /></div>
+                        <div class="field"><label for="otGoals">OT Goals:</label><input type="number" id="otGoals" min="0" /></div>
+                        <input class="runQuery" id="insertSkater" type="submit" value="Insert Skater Into Database" />
+                    </div>
+                </div>
+                <div id="goalie">
+                    <div class="goalieFields fields">
+                        <h2>Goalie Attributes</h2>
+                        <div class="field"><label for="gaa">GAA:</label><input type="number" id="gaa" min="0" /></div>
+                        <div class="field"><label for="sp">Save %:</label><input type="number" id="sp" min="0" max="100"/></div>
+                        <div class="field"><label for="wp">Win %:</label><input type="number" id="wp" min="0" max="100"/></div>
+                        <input class="runQuery" id="insertGoalie" type="submit" value="Insert Goalie Into Database" />
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div id="delete">
+            <h1 style="text-align:left; color:#DDD">Delete Player from Database</h1>
+            <div class="fields"><h3>Who would you like to delete?</h3>
+                <form>
+                <div>
+                    <input type="text" class="autocomplete" id="whoToDelete" placeholder="Enter Player's Name" />
+                </div>
+                <input class="runQuery" id="deletePlayer" type="button" value="Delete Player" />
+                </form>
+            </div>
+            <div id="deleteResult"></div>
+        </div>
+        <div id="modify">
+            <h1 style="text-align:left; color:#DDD">Modify Player in Database</h1>
+            <form>
+            <div class="fields"><h3>Who would you like to modify?</h3>
+                <div>
+                    <input type="text" id="whoToModify" class="autocomplete" placeholder="Enter Player's Name" />
+                </div>
+                <input class="runQuery" id="showAttributes" type="button" value="Show Player Attributes" />
+                <div id="modifySkater" style="display:none">
+                    <div class="field"><label for="name">Name:</label><input type="text" id="name" placeholder="Enter Player's Name" required /></div>
+                    <div class="field"><label for="height">Height:</label><input type="text" id="height" placeholder="Enter Player's Height" /></div>
+                    <div class="field"><label for="weight">Weight:</label><input type="text" id="weight" placeholder="Enter Player's Weight" /></div>
+                    <div class="field"><label for="salary">Salary:</label><input type="number" id="salary" /></div>
+                    <div class="field"><label for="team">Team:</label>
+                    <select id="team">
+						<option value="ANA">Anaheim Ducks</option>
+						<option value="BOS">Boston Bruins</option>
+						<option value="BUF">Buffalo Sabers</option>
+						<option value="CAR">Carolina Hurrican</option>
+						<option value="CBJ">Calgary Flames</option>
+						<option value="CHI">Chicago Black Hawks</option>
+						<option value="COL">Colorado Avalanche</option>
+						<option value="DAL">Dallas Stars</option>
+						<option value="EDM">Edmonton Oilers</option>
+						<option value="FLA">Florida Panthers</option>
+						<option value="LAK">Los Angeles Kings</option>
+						<option value="MIN">Minnesota Wild</option>
+						<option value="MTL">Montreal Canadians</option>
+						<option value="NJD">New Jersey Devils</option>
+						<option value="NSH">Nashville Predators</option>
+						<option value="NYI">New York Islanders</option>
+						<option value="NYR">New York Rangers</option>
+						<option value="OTT">Ottawa Senators</option>
+						<option value="PHI">Philadelphia Flyers</option>
+						<option value="PHX">Phoenix Coyotes</option>
+						<option value="PIT">Pittsburgh Peguins</option>
+						<option value="SJS">San Jose Sharks</option>
+						<option value="STL">St Louis Blues</option>
+						<option value="TBL">Tampa Bay Lightning</option>
+						<option value="TOR">Toronto Maple Leafs</option>
+						<option value="VAN">Vancouver Canucks</option>
+						<option value="WPG">Winnipeg Jets</option>
+						<option value="WSH">Washington Capitals</option>
+                    </select></div>
+                    <div class="field"><label for="shooting">Shot %:</label><input type="number" id="shooting" min="0" max="100"/></div>
+                    <div class="field"><label for="position">Position:</label><select id="positions"></select></div>
+                    <div class="field"><label for="goals">Goals:</label><input type="number" id="goals" min="0" /></div>
+                    <div class="field"><label for="assists">Assists:</label><input type="number" id="assists" min="0" /></div>
+                    <div class="field"><label for="otGoals">OT Goals:</label><input type="number" id="otGoals" min="0" /></div>
+                    <input class="runQuery" id="modifySkaterSubmit" type="submit" value="Submit Changes to Database" />
+                </div>
+                <div id="modifyGoalie" style="display:none">
+                    <div class="field"><label for="name">Name:</label><input type="text" id="name" placeholder="Enter Player's Name" required /></div>
+                    <div class="field"><label for="height">Height:</label><input type="text" id="height" placeholder="Enter Player's Height" /></div>
+                    <div class="field"><label for="weight">Weight:</label><input type="text" id="weight" placeholder="Enter Player's Weight" /></div>
+                    <div class="field"><label for="salary">Salary:</label><input type="number" id="salary" /></div>
+                    <div class="field"><label for="team">Team:</label>
+                    <select id="team">
+						<option value="ANA">Anaheim Ducks</option>
+						<option value="BOS">Boston Bruins</option>
+						<option value="BUF">Buffalo Sabers</option>
+						<option value="CAR">Carolina Hurrican</option>
+						<option value="CBJ">Calgary Flames</option>
+						<option value="CHI">Chicago Black Hawks</option>
+						<option value="COL">Colorado Avalanche</option>
+						<option value="DAL">Dallas Stars</option>
+						<option value="EDM">Edmonton Oilers</option>
+						<option value="FLA">Florida Panthers</option>
+						<option value="LAK">Los Angeles Kings</option>
+						<option value="MIN">Minnesota Wild</option>
+						<option value="MTL">Montreal Canadians</option>
+						<option value="NJD">New Jersey Devils</option>
+						<option value="NSH">Nashville Predators</option>
+						<option value="NYI">New York Islanders</option>
+						<option value="NYR">New York Rangers</option>
+						<option value="OTT">Ottawa Senators</option>
+						<option value="PHI">Philadelphia Flyers</option>
+						<option value="PHX">Phoenix Coyotes</option>
+						<option value="PIT">Pittsburgh Peguins</option>
+						<option value="SJS">San Jose Sharks</option>
+						<option value="STL">St Louis Blues</option>
+						<option value="TBL">Tampa Bay Lightning</option>
+						<option value="TOR">Toronto Maple Leafs</option>
+						<option value="VAN">Vancouver Canucks</option>
+						<option value="WPG">Winnipeg Jets</option>
+						<option value="WSH">Washington Capitals</option>
+                    </select></div>
+                    <div class="field"><label for="gaa">GAA:</label><input type="number" id="gaa" min="0" /></div>
+                    <div class="field"><label for="sp">Save %:</label><input type="number" id="sp" min="0" max="100"/></div>
+                    <div class="field"><label for="wp">Win %:</label><input type="number" id="wp" min="0" max="100"/></div>
+                    <input class="runQuery" id="modifyGoalieSubmit" type="submit" value="Submit Changes to Database" />
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,239 @@
+/* General */
+* {
+    font-family:"Times New Roman", Times, serif;
+    text-align:center;
+    margin:0px;
+    padding:0px;
+}
+body {
+    width:100%;
+    height:100%;
+    /*background:black url('http://ns223506.ovh.net/rozne/8f676ee96b1e32a1975754b32f62edc1/wallpaper-900190.jpg') no-repeat left top;*/
+    background-size:cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+    background:url('http://www.goodwp.com/images/201207/goodwp.com_23122.jpg') no-repeat center center fixed;
+}
+#generalTabs {
+    margin-top:60px;
+    background-color:transparent;
+    border:none;
+}
+#generalTabs > div {
+    color:black;
+}
+.ui-widget-content {
+    background:transparent !important;
+}
+ul.ui-menu {
+    border:2px solid #F5832D;
+    padding:0;
+}
+.ui-menu-item {
+    background-color:#DDD;
+    border-bottom:1px solid #F5832D;
+}
+input, select {
+    display:block;
+    margin:5px auto;
+}
+form {
+    text-align:center;
+    width:100%;
+    margin:10px auto;
+}
+h1, h2, h3 {
+    margin:10px 5px;
+}
+hr {
+    width:70%;
+    height:1px;
+    margin:5px auto;
+    border:none;
+    background-image: -webkit-linear-gradient(left, rgba(256,256,256,0), rgba(256,256,256,0.75), rgba(256,256,256,0));
+    background-image: -moz-linear-gradient(left, rgba(256,256,256,0), rgba(256,256,256,0.75), rgba(256,256,256,0));
+}
+li {
+	list-style:none;
+}
+
+/* Header */
+#header {
+    position:absolute;
+    display:block;
+    top:0;
+    left:0;
+    width:100%;
+    height:60px;
+    background-color:transparent;
+    color:#F5832D;
+    font-style:italic;
+    vertical-align:middle;
+}
+#header > ul > li {
+    display:inline;
+    list-style:none;
+    font-size:26px;
+    vertical-align:middle;
+}
+.navLink {
+    padding-left:15px;
+    padding-right:15px;
+    border-right:1px solid;
+}
+.navLink.last-child {
+    border-right:none;
+}
+.navLink a {
+    color:#00FFFF !important;
+}
+#title {
+    position:relative;
+    top:-10px;
+    display:inline;
+    font-size:40px;
+}
+#logo {
+    /*background-image:url('http://4.bp.blogspot.com/-A8Beaj2-JeQ/TuOE9897WmI/AAAAAAAAABs/5BaysfIzslM/s320/NHL_Logo2.jpg');*/
+}
+#names {
+    display:inline;
+    float:right;
+    margin-right:10px;
+    margin-top:5px;
+}
+#names ul li {
+    list-style:none;
+    font-size:14px;
+}
+
+/* Queries */
+.queryContainer {
+    border:1px solid black;
+    border-radius:5px;
+    width:40%;
+    margin:15px auto;
+    padding-bottom:10px;
+    background:rgba(256,256,256,0.7);
+    -webkit-box-shadow: inset 0px 0px 6px 1px #000;
+    box-shadow: inset 0px 0px 6px 1px #000;
+}
+.runQuery {
+    border:none;
+    background: #5c300f;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f5842d), to(#8c4c1a));
+    background: -webkit-linear-gradient(top, #f5842d, #8c4c1a);
+    background: -moz-linear-gradient(top, #f5842d, #8c4c1a);
+    padding: 4px 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white;
+    font-weight:bold;
+    font-family:"Times New Roman", Times, serif !important;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.runQuery:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(#8c4c1a), to(#f5842d));
+    background: -webkit-linear-gradient(top, #8c4c1a, #f5842d);
+    background: -moz-linear-gradient(top, #8c4c1a, #f5842d);
+    cursor:pointer;
+}
+.runQuery:active {
+    border-top-color: #5c300f;
+    background: #5c300f;
+}
+#saveDiv {
+    display:inline-block;
+    background: #000000; /* Old browsers */
+    background: -moz-linear-gradient(top,  #000000 0%, #207cca 33%, #20a4c9 47%, #207cca 59%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(33%,#207cca), color-stop(47%,#20a4c9), color-stop(59%,#207cca), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #000000 0%,#207cca 33%,#20a4c9 47%,#207cca 59%,#000000 100%); /* Chrome10+,Safari5.1+ */
+}
+#saveDiv table{
+	margin:0px;
+	border-collapse:separate;
+  border-spacing:3px;
+  background-color:transparent;
+}
+#saveDiv tr {
+	/*margin-bottom:1px;*/
+}
+#saveDiv tbody tr:last-child {
+	/*margin-bottom:none;*/
+}
+#saveDiv td, #saveDiv table th {
+	/*margin-right:1px;*/
+	padding:1px 5px;
+  background-color:white;
+}
+#saveDiv td:last-child, #saveDiv th:last-child {
+	/*margin-right:none;*/
+}
+
+/* Insert */
+#insertTabs {
+    border:none;
+}
+#insertTabs > ul {
+    border:none;
+    width:50%;
+    margin:10px auto;
+}
+.tabs {
+    background: transparent;
+    border: none
+}
+.tabs .ui-widget-header {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+.tabs .ui-tabs-nav .ui-state-default {
+    background: transparent;
+    border: none;
+}
+.tabs .ui-tabs-nav .ui-state-active {
+    background: transparent url(img/uiTabsArrow.png) no-repeat bottom center;
+    border: 0px;
+}
+.tabs .ui-tabs-nav .ui-state-default a {
+    color: #c0c0c0;
+}
+.tabs .ui-tabs-nav .ui-state-active a {
+    color:#F5832D;
+}
+.fields {
+    padding-bottom:10px;
+    border:1px solid black;
+    border-radius:5px;
+    width:50%;
+    margin:15px auto;
+    background:rgba(256,256,256,0.6);
+    -webkit-box-shadow: inset 0px 0px 6px 1px #000;
+    box-shadow: inset 0px 0px 6px 1px #000;
+}
+.fields input, .fields select {
+    display:inline;
+}
+.field {
+    width:350px;
+    margin:0 auto;
+    text-align:left;
+}
+.field label {
+    width:80px;
+    font-size:19px;
+    float:left;
+    text-align:right;
+    padding:7px 0 0;
+    margin-right:5px;
+}
